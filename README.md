@@ -20,8 +20,8 @@ npm install -g @vue/cli
 Clone o repositório para sua máquina local:
 
 ```bash
-git clone https://github.com/seu-usuario/seu-projeto.git
-cd seu-projeto/frontend
+git clone https://github.com/fundamentos-devops/to-do-frontend.git
+cd seu-projeto/to-do-frontend
 ```
 
 ## Instalando Dependências
