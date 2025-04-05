@@ -21,7 +21,7 @@ Clone o repositório para sua máquina local:
 
 ```bash
 git clone https://github.com/fundamentos-devops/to-do-frontend.git
-cd seu-projeto/to-do-frontend
+cd to-do-frontend/
 ```
 
 ## Instalando Dependências
