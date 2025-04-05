@@ -63,7 +63,8 @@
   <script setup>
   import { ref } from 'vue'
   import { useRouter } from 'vue-router'
-  import { registerUser } from '@/api/auth' // <- Use isso com API real
+  import { registerUser } from '@/api/auth'
+  import Swal from 'sweetalert2'
   
   const router = useRouter()
   
@@ -89,11 +90,20 @@
       payload
       await new Promise(resolve => setTimeout(resolve, 1200))
   
-      alert('Conta criada com sucesso!')
+      await Swal.fire({
+        icon: 'success',
+        title: 'Sucesso!',
+        text: 'Conta criada com sucesso.',
+        confirmButtonText: 'OK'
+      })
       router.push('/login')
     } catch (err) {
-      console.error(err)
-      alert('Erro ao registrar. Tente novamente.')
+      await Swal.fire({
+        icon: 'error',
+        title: 'Erro!',
+        text: 'Ocorreu um erro ao criar a conta.',
+        confirmButtonText: 'Tentar novamente'
+      })
     } finally {
       loading.value = false
     }

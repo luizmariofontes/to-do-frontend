@@ -53,6 +53,7 @@ import { ref } from 'vue'
 import { useRouter } from 'vue-router'
 import { loginUser } from '@/api/auth.js'
 import { useAuthStore } from '@/stores/auth'
+import Swal from 'sweetalert2'
 
 const router = useRouter()
 
@@ -77,11 +78,22 @@ try {
   // Salva no Pinia
   authStore.login({ access, refresh })
 
-  alert('Login realizado com sucesso!')
+  await Swal.fire({
+    icon: 'success',
+    title: 'Login realizado com sucesso!',
+    showConfirmButton: false,
+    timer: 1500
+  });
   router.push('/')
 } catch (err) {
   console.error(err)
-  alert('Usuário ou senha inválidos.')
+  await Swal.fire({
+    icon: 'error',
+    title: 'Erro ao fazer login',
+    text: 'Verifique suas credenciais e tente novamente.',
+    showConfirmButton: false,
+    timer: 1500
+  });
 } finally {
   loading.value = false
 }

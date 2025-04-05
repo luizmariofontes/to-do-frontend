@@ -2,7 +2,7 @@ import axios from 'axios'
 import { useAuthStore } from '@/stores/auth'
 
 const api = axios.create({
-  baseURL: 'http://localhost:8000/api/v1/', // ajuste se precisar
+  baseURL: process.env.VUE_APP_API_URL,
   headers: {
     'Content-Type': 'application/json'
   }
