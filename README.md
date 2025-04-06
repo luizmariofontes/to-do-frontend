@@ -31,15 +31,16 @@ Dentro da pasta do frontend, execute:
 npm install
 ```
 
+## Configurando o Projeto
+
+Antes de executar o projeto, é necessário configurar a URL da API do backend.
+No diretório `contrib/`, você encontraá o arquivo de exemplo do .env. Certifique-se de que a variável de ambiente usada para a URL da API esteja corretamente definida, apontando para o endereço do backend.
+
 ## Executando o Projeto
-Ambiente de Desenvolvimento
+
+### Ambiente de Desenvolvimento
 
 Para rodar o projeto em modo de desenvolvimento:
 ```bash
 npm run serve
 ```
-
-
-
-
-
