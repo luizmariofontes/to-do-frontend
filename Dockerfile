@@ -2,7 +2,6 @@ FROM node:18
 WORKDIR /app
 COPY package*.json ./
 RUN npm install -g @vue/cli && npm install
-RUN npm install cypress --save-dev
 RUN apt-get update && apt-get install -y \
     xvfb \
     libgtk2.0-0 \
