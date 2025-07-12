@@ -6,7 +6,6 @@ on:
 
 jobs:   
   test-and-push-frontend:
-     needs: test-frontend
      runs-on: ubuntu-latest
      steps:
        - name: Build da imagem Docker do Frontend
