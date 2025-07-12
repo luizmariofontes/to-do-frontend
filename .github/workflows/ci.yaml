@@ -9,10 +9,10 @@ jobs:
      runs-on: ubuntu-latest
      steps:
        - name: Build da imagem Docker do Frontend
-         run: docker build -t to-do-frontend:latest
+         run: docker build -t to-do-frontend .
 
        - name: Iniciar o conteiner do Frontend 
-         run: docker run -d -p 8083:8083 --name frontend-app to-do-frontend:latest
+         run: docker run -d -p 8083:8083 --name frontend to-do-frontend:latest
 
        - name: Instalar Cypress
          run: npm install cypress
