@@ -18,9 +18,6 @@ jobs:
        - name: Iniciar o conteiner do Frontend 
          run: docker run -d -p 8083:8083 --name frontend to-do-frontend:latest
 
-       - name: Instalar Cypress
-         run: docker exec frontend npm install cypress
-
        - name: Roda testes cypress criados
          run: docker exec frontend npm run test:e2e -- --headless
 
