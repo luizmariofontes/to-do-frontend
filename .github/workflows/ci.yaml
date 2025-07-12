@@ -8,6 +8,10 @@ jobs:
   test-and-push-frontend:
      runs-on: ubuntu-latest
      steps:
+
+       - name: Checkout do código
+         uses: actions/checkout@v4
+
        - name: Build da imagem Docker do Frontend
          run: docker build -t to-do-frontend .
 
@@ -22,10 +26,8 @@ jobs:
 
        - name: Remover conteiner do Frontend
          if: always()
-         run: docker stop frontend-app && docker rm frontend-app
+         run: docker stop frontend && docker rm frontend
 
-       - name: Checkout do código
-         uses: actions/checkout@v4
        - name: Login to DockerHub
          uses: docker/login-action@v3
          with:
