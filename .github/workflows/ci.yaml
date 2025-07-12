@@ -19,7 +19,7 @@ jobs:
          run: docker run -d -p 8083:8083 --name frontend to-do-frontend:latest
 
        - name: Roda testes cypress criados
-         run: docker exec frontend npm run test:e2e -- --headless
+         run: docker exec frontend xvfb-run -- npm run test:e2e
 
        - name: Remover conteiner do Frontend
          if: always()
